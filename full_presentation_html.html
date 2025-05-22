@@ -17,6 +17,32 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
+            transition: background 0.8s ease;
+        }
+        
+        /* 各章の背景グラデーション */
+        body.chapter1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        body.chapter2 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        body.chapter3 {
+            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+        }
+        
+        body.chapter4 {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        body.chapter5 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+        
+        body.chapter6 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
         }
         
         .container {
@@ -103,6 +129,23 @@
             text-align: center;
             padding-bottom: 15px;
             border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .chapter-icon {
+            font-size: 1.2em;
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
         
         .chapter h2 {
@@ -225,7 +268,10 @@
         
         <!-- 第1章 -->
         <div class="chapter active" id="chapter1">
-            <h1>第1章：私たちの本質とは何か - 霊性の真実</h1>
+            <h1>
+                <span class="chapter-icon">∞</span>
+                第1章：私たちの本質とは何か - 霊性の真実
+            </h1>
             
             <h2>導入：なぜ霊性を知る必要があるのか</h2>
             <p>皆さん、今日からスピリチュアルな情報について深く学んでいきますが、これは単なる知識の習得ではありません。</p>
@@ -326,7 +372,10 @@
         
         <!-- 第2章 -->
         <div class="chapter" id="chapter2">
-            <h1>第2章：次元構造と霊性の進化メカニズム</h1>
+            <h1>
+                <span class="chapter-icon">⚡</span>
+                第2章：次元構造と霊性の進化メカニズム
+            </h1>
             
             <h2>三次元と四次元の関係</h2>
             <h3>私たちが生きる現実世界</h3>
@@ -464,7 +513,10 @@
         
         <!-- 第3章 -->
         <div class="chapter" id="chapter3">
-            <h1>第3章：守護霊団の役割と五次元からの導き</h1>
+            <h1>
+                <span class="chapter-icon">👁</span>
+                第3章：守護霊団の役割と五次元からの導き
+            </h1>
             
             <h2>私たちの霊性の上位存在</h2>
             <h3>五次元に存在する守護霊団</h3>
@@ -619,7 +671,10 @@
         
         <!-- 第4章 -->
         <div class="chapter" id="chapter4">
-            <h1>第4章：六次元キリストグループの壮大なプロジェクト</h1>
+            <h1>
+                <span class="chapter-icon">✝</span>
+                第4章：六次元キリストグループの壮大なプロジェクト
+            </h1>
             
             <h2>六次元の存在たちとその計画</h2>
             <h3>より崇高な指導霊たちの登場</h3>
@@ -812,7 +867,10 @@
         
         <!-- 第5章 -->
         <div class="chapter" id="chapter5">
-            <h1>第5章：日本の特別な役割と六次元の子どもたち</h1>
+            <h1>
+                <span class="chapter-icon">🌸</span>
+                第5章：日本の特別な役割と六次元の子どもたち
+            </h1>
             
             <h2>現在の日本の特別な状況</h2>
             <h3>六次元移行の最前線</h3>
@@ -978,7 +1036,10 @@
         
         <!-- 第6章 -->
         <div class="chapter" id="chapter6">
-            <h1>第6章：六次元への移行と霊的自由の実現</h1>
+            <h1>
+                <span class="chapter-icon">☀</span>
+                第6章：六次元への移行と霊的自由の実現
+            </h1>
             
             <h2>六次元移行の最大の恩恵</h2>
             <h3>霊的に完全な自由とは</h3>
@@ -1213,6 +1274,9 @@
                 button.classList.remove('active');
             });
             
+            // Change body class for background gradient
+            document.body.className = `chapter${chapterNumber}`;
+            
             // Show selected chapter
             const selectedChapter = document.getElementById(`chapter${chapterNumber}`);
             if (selectedChapter) {
@@ -1231,6 +1295,7 @@
         
         // Initialize first chapter as active
         document.addEventListener('DOMContentLoaded', function() {
+            document.body.className = 'chapter1';
             showChapter(1);
         });
         
